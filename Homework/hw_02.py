@@ -138,12 +138,12 @@ class UAV:
         self._missions = []
 
 	# напишите код для декоратора атрибута _missions
-	@property
+    @property
     def missions(self):
         return self._missions
 
 	# напишите публичный метод count_missions
-	def count_missions(self):
+    def count_missions(self):
         return(len(self._missions))
 
 class MultirotorUAV(Aircraft, UAV):
@@ -155,12 +155,12 @@ class MultirotorUAV(Aircraft, UAV):
         self.__brand = brand
 
 	# напишите публичный метод get_info
-	def get_info(self):
+    def get_info(self):
         info = {"weight": self.__weight, "brand": self.__brand}
         return(info)
 
 	# напишите публичный метод get_model
-	def get_model(self):
+    def get_model(self):
         full_model_name = self.__brand + " " + self.__model
         return(full_model_name)
 
