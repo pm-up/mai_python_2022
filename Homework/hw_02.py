@@ -142,6 +142,10 @@ class UAV:
     def missions(self):
         return self._missions
 
+    @missions.setter
+    def missions(self, missions):
+        self._missions = missions
+
 	# напишите публичный метод count_missions
     def count_missions(self):
         return(len(self._missions))
