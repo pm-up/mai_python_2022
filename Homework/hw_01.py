@@ -87,12 +87,35 @@ for drone, weight in zip(drone_list,  drone_weight_list):
 #высота 100 м, полет над населенным пунктом, вне закрытых зон, в прямой видимости
 #помните, что для дронов тяжелее 150 г согласовывать полет над населенным пунктом - обязательно!
 
+height = 100
+city = True
+visibility = True
+out_of_restricted_areas = True
+
 for drone, weight in zip(drone_list, drone_weight_list):
-    if weight > 150:
+    if weight > 150 and city == True: 
         proper_name=correct_name(drone)
         tmp = drone.split()[1:]
         drone = proper_name + " " +  (" ".join(tmp))
         print(drone + ": Approval is required for the flight!")
+    elif height > 150:  
+        proper_name=correct_name(drone)
+        tmp = drone.split()[1:]
+        drone = proper_name + " " +  (" ".join(tmp))
+        print(drone + ": Approval is required for the flight!")
+
+    elif visibility == False:
+        proper_name=correct_name(drone)
+        tmp = drone.split()[1:]
+        drone = proper_name + " " +  (" ".join(tmp))
+        print(drone + ": Approval is required for the flight!")
+
+    elif out_of_restricted_areas == False:
+        proper_name=correct_name(drone)
+        tmp = drone.split()[1:]
+        drone = proper_name + " " +  (" ".join(tmp))
+        print(drone + ": Approval is required for the flight!")
+        
     else:
         proper_name=correct_name(drone)
         tmp = drone.split()[1:]
